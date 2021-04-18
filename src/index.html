@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+</head>
+
+<body>
+    <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-text-left">
+                <h2>Calendar</h2>
+            </div>
+        </div>
+        <div>
+            <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <!-- select user -->
+                        <div class="uk-margin">
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="form-horizontal-select">
+                                    <option>Maria</option>
+                                    <option>Bob</option>
+                                    <option>Alex</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <!-- This is a button toggling the modal -->
+                        <button class="uk-button uk-button-danger uk-margin-small-right" type="button"
+                            uk-toggle="target: #modal-example">
+                            New event
+                            <a href="#" uk-icon="icon: plus"></a>
+                        </button>
+                        <button class="uk-button uk-button-primary remObj" type="button">remObj</button>
+
+                        <!-- This is the modal -->
+                        <div id="modal-example" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body">
+                                <h2 class="uk-modal-title">Creating new event</h2>
+
+                                <!-- onSubmit="newEvent()" -->
+                                <form class="uk-form-horizontal uk-margin-large" name="formNameUserDayTime">
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="form-horizontal-text">Name of the
+                                            event</label>
+                                        <div class="uk-form-controls">
+                                            <input class="uk-input" id="form-horizontal-text" name='nameEvent'
+                                                type="text" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="form-horizontal-select">Participants</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select nameUser" id="form-horizontal-select-user">
+                                                <option value="maria" selected>Maria</option>
+                                                <option value="bob">Bob</option>
+                                                <option value="alex">Alex</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="form-horizontal-select">Day</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select" id="form-horizontal-select-day">
+                                                <option value="monday">Monday</option>
+                                                <option value="tuesday">Tuesday</option>
+                                                <option value="wednesday">Wednesday</option>
+                                                <option value="thursday">Thursday</option>
+                                                <option value="friday">Friday</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="form-horizontal-select">Time</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select" id="form-horizontal-select-time">
+                                                <option value="1">10:00</option>
+                                                <option value="2">11:00</option>
+                                                <option value="3">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="5">14:00</option>
+                                                <option value="6">15:00</option>
+                                                <option value="7">16:00</option>
+                                                <option value="8">17:00</option>
+                                                <option value="9">18:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close"
+                                            type="button">Cancel</button>
+                                        <button class="uk-button uk-button-primary btn_submit"
+                                            type="submit">Create</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table -->
+    <div class="uk-child-width-1-6@s uk-grid-collapse uk-text-center" uk-grid>
+        <div id="time">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Name</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">10:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">11:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">12:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">13:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">14:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">15:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">16:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">17:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-tile uk-tile-default uk-padding-small">
+                            <p class="uk-h4">18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="monday">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center wrapperMonday" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Monday</p>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tuesday">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center wrapperTuesday" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Tuesday</p>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small" uk-tooltip="Hello World">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="wednesday">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center wrapperWednesday" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Wednesday</p>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="thursday">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center wrapperThursday" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Thursday</p>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="friday">
+            <div class="uk-tile uk-tile-default uk-padding-remove">
+                <div class="uk-child-width-1-1@s uk-grid-collapse uk-text-center wrapperFriday" uk-grid>
+                    <div>
+                        <div class="uk-tile uk-tile-secondary uk-padding-remove">
+                            <p class="uk-h4">Friday</p>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                    <div class="uk-button-default">
+                        <div class="uk-tile uk-tile-muted uk-padding-small">
+                            <a href="#" uk-icon="icon: plus" type="button" uk-toggle="target: #modal-example"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit-icons.min.js"></script>
+
+    <!-- JS -->
+    <script type="module" src="../src/js/main.js"></script>
+</body>
+
+</html>
